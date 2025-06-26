@@ -1,11 +1,11 @@
 import { Button } from "@/components";
 import { FC } from "react";
 import Image from "next/image";
-import { oflLogo } from "@/assets/icons";
+import { dnaLogo } from "@/assets/images";
 
 const Footer: FC = () => {
   return (<footer className="grid items-end h-[63vh] text-white" id="contacts">
-    <div className="bg-[#1B1B1B] relative h-[50vh]">
+    <div className="bg-[#1B1B1B] h-[50vh]">
     <div className="bg-primary h-[40vh] container max-w-[90%] left-[50%] translate-x-[-50%] -top-[20vh] absolute p-4 space-y-2">
       <h3 className="font-maximaNouvaBold text-3xl">
         We cannot do this alone, Join us Today.
@@ -21,28 +21,23 @@ const Footer: FC = () => {
 
     <div>
       <div>
-
-   
       <span>
-        We are a dedicated non-governmental organization committed to saving lives.
+        Professional Facilities Management & Cleaning Services.
       </span>
       <Image 
-        src={oflLogo}
-        alt="oxygen logo"
+        src={dnaLogo}
+        alt="dna logo"
       />
       </div>
       <div>
         <span>
-          improving health outcomes by ensuring access to medical oxygen for those who need it most. we operate in Ghana, West Africa, where the availability of medical oxygen remains a critical challenge.
+          contact us   
         </span>
         <ul>
-          
         </ul>
       </div>
     </div>
     </div>
-
-
   </footer>);
 };
 

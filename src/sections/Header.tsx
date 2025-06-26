@@ -2,7 +2,7 @@
 import { FC, useState } from "react";
 import Image from "next/image";
 import Link  from "next/link";
-import { oflLogo } from "@/assets/icons"
+import { dnaLogo } from "@/assets/images"
 import { AnimatePresence, motion } from "motion/react";
 import { Button } from "@/components";
 
@@ -28,15 +28,15 @@ const navItems = [
 
 const Header: FC = () => {
   const [openMobileMenu, setOpenMobileMenu ]= useState(false)
-  console.log(openMobileMenu)
+
   return (
-    <header>
+    <header className="bg-blue-2">
       <div className="container max-w-[20rem] md:max-w-[80%] lg:max-w-[80%]">
         <div className="py-7"> 
           <div className="flex justify-between items-center">
             <div className="flex items-center justify-between gap-2 w-full">
                 <div className="w-[4rem]">
-                  <Image className="object-fill" src={oflLogo} alt="jitter logo"  />
+                  <Image className="object-fill" src={dnaLogo} alt="dna logo"  />
                 </div>
                 
                 <ul className="hidden md:flex items-center gap-4">
@@ -49,7 +49,7 @@ const Header: FC = () => {
             <div className="relative grid ems-center">
               {/* <Link href="/donate"> */}
                 <Button variant="primary" className="mr-[10ch] hidden">
-                    Donate
+                    Shedule Consultation
                 </Button>
               {/* </Link> */}
               <button className="fixed justify-self-end flex items-center justify-center text-black bg-gray-800 fill-black z-20 md:hidden"

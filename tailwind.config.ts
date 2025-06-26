@@ -36,7 +36,7 @@ const config: Config = {
                     3: '#f2f1f3'
                 },
                 primary: {
-                    DEFAULT: 'hsla(87, 61%, 43%, 1)'
+                    DEFAULT: 'hsla(198, 94%, 45%, 1)'
                 },
                 secondary: {
                     DEFAULT: '#EED741'
@@ -49,7 +49,8 @@ const config: Config = {
                 },
                 blue: {
                     DEFAULT: 'hsla(193, 91%, 31%, 1)',
-                    1: 'hsla(183, 100%, 96%, 1)'
+                    1: 'hsla(183, 100%, 96%, 1)',
+                    2: 'hsla(198, 100%, 94%, 1)'
                 }
             }
         },
