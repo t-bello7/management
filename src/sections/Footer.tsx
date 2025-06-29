@@ -1,12 +1,12 @@
-import { Button } from "@/components";
+// import { Button } from "@/components";
 import { FC } from "react";
 import Image from "next/image";
 import { dnaLogo } from "@/assets/images";
 
 const Footer: FC = () => {
-  return (<footer className="grid items-end h-[63vh] text-white" id="contacts">
-    <div className="bg-[#1B1B1B] h-[50vh]">
-    <div className="bg-primary h-[40vh] container max-w-[90%] left-[50%] translate-x-[-50%] -top-[20vh] absolute p-4 space-y-2">
+  return (<footer className="grid items-end text-white" id="contacts">
+    <div className="bg-[#1B1B1B] ">
+    {/* <div className="bg-primary h-[40vh] container max-w-[90%] left-[50%] translate-x-[-50%] -top-[20vh] p-4 space-y-2">
       <h3 className="font-maximaNouvaBold text-3xl">
         We cannot do this alone, Join us Today.
       </h3>
@@ -17,17 +17,16 @@ const Footer: FC = () => {
       <Button variant="secondary">
         Join Us
       </Button>
-    </div>
+    </div> */}
 
     <div>
       <div>
       <span>
         Professional Facilities Management & Cleaning Services.
       </span>
-      <Image 
-        src={dnaLogo}
-        alt="dna logo"
-      />
+      <div className="w-[4rem]">
+       <Image className="object-fill" src={dnaLogo} alt="dna logo"  />
+      </div>
       </div>
       <div>
         <span>

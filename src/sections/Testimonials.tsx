@@ -1,6 +1,7 @@
 import { FC } from "react";
 import Image from "next/image";
 import { medicalMask } from "@/assets/icons";
+
 const aboutItems = [
   {
     icon: medicalMask,
@@ -48,26 +49,25 @@ const aboutItems = [
     description: 'From rearranging workspaces to full relocations, we ensure smooth moves with minimal disruption.'
   },
 ]
-
 const Testimonials: FC = () => {
   return (
   <section className="section container max-w-[90%] space-y-12" id="testimonials">
     <div className="md:flex space-y-6">
       <div className="container space-y-4 md:flex md:justify-between">
-        <h2 className="text-center text-primary uppercase font-maximaNouvaBold text-2xl">
+        <h2 className="text-center uppercase font-sfProDisplayBold  text-2xl">
             Our mission is simple yet profound.
         </h2> 
-        <p>
+        <p className="text-[#71717A]">
           To deliver high-quality, reliable, and sustainable facilities management and cleaning services that enhance our clients’ environments, promote health and safety, and support the long-term performance of their buildings and operations.
         </p>
       </div>
-     <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 container max-w-[85%]">
+     <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 container">
           {
             aboutItems.map(item => (
-              <div key={item.title} className="p-4 space-y-2 border border-primary rounded-2xl">
+              <div key={item.title} className="p-4 space-y-2 border rounded-2xl">
                 <Image className="w-6 md:w-9 aspect-square" src={item.icon} alt={item.title} />
-                <h4 className="font-bold text-sm md:text-base text-primary"> {item.title} </h4>
-                <p className="text-xs md:text-sm ">
+                <h4 className="font-bold text-sm md:text-base "> {item.title} </h4>
+                <p className="text-xs md:text-sm text-[#71717A]">
                   { item.description}
                 </p>
               </div>
@@ -78,5 +78,4 @@ const Testimonials: FC = () => {
   
   </section>);
 };
-
 export default Testimonials;

@@ -7,12 +7,12 @@ import {
   Footer
 } from "@/sections";
 export default function Home() {
-  return <>
+  return <div className="font-sfProDisplay">
     <Header />
     <Hero />
     <Projects />
     <Intro />
     <Testimonials />
     <Footer />  
-  </>
+  </div>
 }

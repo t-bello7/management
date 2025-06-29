@@ -18,7 +18,9 @@ const config: Config = {
                 maximaNouvaBold: ['MaximaNouvaBold', 'sans-serif'],
                 maximaNouvaSemiBold: ['MaximaNouvaSemiBold', 'sans-serif'],
                 maximaNouvaExtraBold: ['MaximaNouvaExtraBold', 'sans-serif'],
-                maximaNouvaThin: ['MaximaNouvaThin', 'sans-serif']
+                maximaNouvaThin: ['MaximaNouvaThin', 'sans-serif'],
+                sfProDisplay: ['SfProDisplay', 'sans-serif'],
+                sfProDisplayBold: ['SfProDisplayBold', 'sans-serif']
             },
             container: {
                 center: true,

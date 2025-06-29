@@ -27,30 +27,30 @@ const info = [
 const Projects: FC = () => {
   return (
     <section className="section space-y-8" id="projects">
-      <div className="container space-y-6">
-        <h2 className="text-center text-primary uppercase font-maximaNouvaBold text-2xl">
+      <div className="container space-y-6 grid justify-items-center">
+        <h2 className="text-primary uppercase text-xs bg-[#E6F8FF] w-fit text-center py-1 px-4 rounded-full">
           OUR SERVICES
         </h2> 
         <div className="space-y-3">
-          <h3 className="text-2xl md:text-4xl font-maximaNouvaBold font-bold">
+          <h3 className="text-center text-2xl md:text-4xl font-sfProDisplayBold font-bold">
              We Create Environments That Work
           </h3>
-          <p>
-         Partnering with [Your Company Name] means choosing a team dedicated to reliability, safety, and tailored facility solutions that support your operations and enhance your space.
+          <p className="text-[#71717A]">
+         Partnering with DNA management means choosing a team dedicated to reliability, safety, and tailored facility solutions that support your operations and enhance your space.
           </p>
         </div>
 
       </div>
    
          <div
-      className="container max-w-[80%] flex flex-col gap-4 md:hidden lg:flex lg:flex-row lg:max-w-full lg:gap-5">
+      className="container max-w-[88%] flex flex-col gap-4 md:hidden lg:flex lg:flex-row lg:max-w-full lg:gap-5">
           {
             info.map(({icon, text, title}) => (
-              <div key={title} className="rounded-xl bg-white w-[30ch] h-[25vh] py-5 px-4 grid items-start shadow-2xl">
+              <div key={title} className="rounded-xl bg-white md:w-[30ch] h-[38vh] py-6 px-4 grid items-start border gap-3">
                 <Image src={icon} alt={title} />
-                <div> 
-                  <span className=""> {title} </span>
-                  <p>
+                <div className="space-y-2"> 
+                  <span className="text-bold text-[#18181B]"> {title} </span>
+                  <p className="text-[#71717A]">
                     {text}
                   </p>
                 </div>

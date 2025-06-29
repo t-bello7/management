@@ -2,19 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-
 .section {
     @apply py-24 md:py-32 lg:py-10
 }
-
 .line {
     @apply overflow-hidden;
 }
-
 .word {
     @apply translate-y-full
 }
-
 @font-face {
     font-family: 'MaximaNouva-Bold';
     src: url('../assets/fonts/MaximaNouva-Bold.ttf');
@@ -38,4 +34,12 @@
 @font-face {
     font-family: 'MaximaNouva';
     src: url('../assets/fonts/MaximaNouva-Regular.ttf')
+}
+@font-face {
+    font-family: 'SfProDisplay';
+    src: url('../assets/fonts/SFPRODISPLAYREGULAR.OTF');
+}
+@font-face {
+    font-family: 'SfProDisplayBold';
+    src: url('../assets/fonts/SFPRODISPLAYBOLD.OTF');
 }
