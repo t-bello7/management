@@ -9,6 +9,9 @@ import colors from './colors.svg'
 import checkmark from './checkmark.svg'
 import bucket from './bucket.svg'
 import star from './star.svg'
+import facebook from './facebook.svg'
+import instagram from './instagram.svg'
+import linkedin from './linkedin.svg'
 
 export {
     menuBar,
@@ -21,5 +24,8 @@ export {
     colors,
     bucket,
     checkmark,
-    star
+    star,
+    facebook,
+    instagram,
+    linkedin
 }

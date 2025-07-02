@@ -1,41 +1,52 @@
-// import { Button } from "@/components";
 import { FC } from "react";
 import Image from "next/image";
 import { dnaLogo } from "@/assets/images";
+import { facebook, linkedin, instagram } from "@/assets/icons";
 
 const Footer: FC = () => {
   return (<footer className="grid items-end text-white" id="contacts">
-    <div className="bg-[#1B1B1B] ">
-    {/* <div className="bg-primary h-[40vh] container max-w-[90%] left-[50%] translate-x-[-50%] -top-[20vh] p-4 space-y-2">
-      <h3 className="font-maximaNouvaBold text-3xl">
-        We cannot do this alone, Join us Today.
-      </h3>
-      <p>
-        Whether you are an individual, organization, or government entity, your support can help us save lives and transform healthcare in Ghana.
-        Together, we can ensure that no one is left behind in the fight for breath and life.
-      </p>
-      <Button variant="secondary">
-        Join Us
-      </Button>
-    </div> */}
-
-    <div>
-      <div>
-      <span>
-        Professional Facilities Management & Cleaning Services.
-      </span>
-      <div className="w-[4rem]">
-       <Image className="object-fill" src={dnaLogo} alt="dna logo"  />
+    <div className="bg-[#101E38] pt-10 pb-5 space-y-4">
+      <div className="container mx-auto space-y-2">
+        <span className="font-sfProDisplayBold">
+          Professional Facilities Management & Cleaning Services.
+        </span>
+        <div className="w-[4rem] bg-[#E1F6FF] rounded-xl">
+        <Image className="object-fill" src={dnaLogo} alt="dna logo"  />
+        </div>
       </div>
-      </div>
-      <div>
-        <span>
-          contact us   
+      <div className="container mx-auto">
+        <span className="font-sfProDisplayBold">
+          Contact us   
         </span>
         <ul>
+          <li>
+          Phone: +233-809-942
+          </li>
+          <li>
+            Email: info@management.com
+          </li>
+          <li>
+            Office Address: 123 Facility Way, Victoria Island, Lagos, Nigeria
+          </li>
         </ul>
       </div>
-    </div>
+      <hr className="text-[#fff] w-full my-6 "></hr>
+      <div className="container mx-auto space-y-4">
+        <div className="flex gap-4">
+          <span className="bg-[#25334D] p-2 rounded-full">
+            <Image src={facebook} alt="facebook icon" />
+          </span>
+           <span className="bg-[#25334D] p-2 rounded-full">
+            <Image src={linkedin} alt="facebook icon" />
+          </span>
+           <span className="bg-[#25334D] p-2 rounded-full">
+            <Image src={instagram} alt="facebook icon" />
+          </span>
+        </div>
+        <div className="">
+        All Rights Reserved
+        </div>
+      </div>
     </div>
   </footer>);
 };
