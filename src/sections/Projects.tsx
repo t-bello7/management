@@ -35,18 +35,17 @@ const Projects: FC = () => {
           <h3 className="text-center text-2xl md:text-4xl font-sfProDisplayBold font-bold">
              We Create Environments That Work
           </h3>
-          <p className="text-[#71717A]">
+          <p className="text-[#71717A] md:text-center">
          Partnering with DNA management means choosing a team dedicated to reliability, safety, and tailored facility solutions that support your operations and enhance your space.
           </p>
         </div>
-
       </div>
    
          <div
-      className="container max-w-[88%] flex flex-col gap-4 md:hidden lg:flex lg:flex-row lg:max-w-full lg:gap-5">
+      className="container max-w-[88%] flex flex-col gap-4 md:flex md:flex-row md:max-w-full lg:gap-5 justify-center">
           {
             info.map(({icon, text, title}) => (
-              <div key={title} className="rounded-xl bg-white md:w-[30ch] h-[38vh] py-6 px-4 grid items-start border gap-3">
+              <div key={title} className="rounded-xl bg-white md:w-[30ch] h-[36vh] py-6 px-4 grid items-start border gap-3">
                 <Image src={icon} alt={title} />
                 <div className="space-y-2"> 
                   <span className="text-bold text-[#18181B]"> {title} </span>

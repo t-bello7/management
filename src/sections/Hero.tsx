@@ -8,15 +8,15 @@ import {
 
 const Hero: FC = () => {
   return(
-  <section className="grid gap-8   md:grid-cols-2 lg:h-screen lg:gap-0 bg-blue-2">
-    <div className="grid top-0 justify-items-center space-y-8 max-w-[88%] container">
-      <h2 className="font-sfProDisplayBold text-[#101E38] text-center font-extrabold text-4xl">
+  <section className="grid gap-8 md:relative md:h-[40vh] md:mb-[13vh] lg:h-[60vh] lg:gap-0 bg-blue-2">
+    <div className="grid md:block top-0 justify-items-center space-y-8 max-w-[88%] container">
+      <h2 className="font-sfProDisplayBold text-[#101E38] text-center font-extrabold text-4xl md:text-5xl">
         Elevate Your Facility Management Experience
       </h2>
-      <span className="text-xs text-center text-[#71717A]">
+      <p className="text-xs text-center md:text-base  text-[#71717A]">
         We go beyond maintenance — delivering smart, reliable, and tailored facility solutions that promote cleanliness, safety, and operational efficiency. Partner with us to create spaces where people and businesses thrive.
-      </span>
-      <div className="flex gap-2 container mx-auto max-w-[80%]">
+      </p>
+      <div className="flex gap-2 container mx-auto md:justify-center max-w-[80%]">
         <Button variant="primary">
           Shedule Consultation
         </Button>
@@ -25,7 +25,7 @@ const Hero: FC = () => {
         </Button>
       </div>
     </div>
-    <div className="max-w-[95%] container">
+    <div className="max-w-[95%] container md:absolute md:-bottom-[20vh] md:left-[50%] md:translate-x-[-50%]">
       <Image 
       src={heroImg}
       alt="hero image"

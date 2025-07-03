@@ -52,16 +52,16 @@ const aboutItems = [
 const Testimonials: FC = () => {
   return (
   <section className="section container max-w-[90%] space-y-12" id="testimonials">
-    <div className="md:flex space-y-6">
-      <div className="container space-y-4 md:flex md:justify-between">
+    <div className="space-y-6">
+    <div className="container space-y-4">
         <h2 className="text-center uppercase font-sfProDisplayBold  text-2xl">
             Our mission is simple yet profound.
         </h2> 
         <p className="text-[#71717A]">
           To deliver high-quality, reliable, and sustainable facilities management and cleaning services that enhance our clients’ environments, promote health and safety, and support the long-term performance of their buildings and operations.
         </p>
-      </div>
-     <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 container">
+    </div>
+    <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 container">
           {
             aboutItems.map(item => (
               <div key={item.title} className="p-4 space-y-2 border rounded-2xl">
@@ -73,9 +73,8 @@ const Testimonials: FC = () => {
               </div>
             ))
           }
-        </div>   
+    </div>   
     </div>
-  
   </section>);
 };
 export default Testimonials;

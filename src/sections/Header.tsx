@@ -41,7 +41,7 @@ const Header: FC = () => {
                 
                 <ul className="hidden md:flex items-center gap-4">
                   {navItems.map(({label}) => (
-                    <Link href="" key={label}>{label}</Link>
+                    <Link className="text-[#25334D]" href="" key={label}>{label}</Link>
                   ))}
                 </ul>
             </div>
