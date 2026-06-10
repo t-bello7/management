@@ -1,27 +1,26 @@
 "use client"
 import { FC, useState } from "react";
-import Image from "next/image";
 import Link  from "next/link";
-import { dnaLogo } from "@/assets/images"
+import Image from "next/image";
 import { AnimatePresence, motion } from "motion/react";
-import { Button } from "@/components";
+import { dnaLogo } from "@/assets/images";
 
 /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
 const navItems = [
   {
-    label: "About us",
-    href: "#intro",
-  },
-  {
-    label: "Our Vision",
+    label: "Programs",
     href: "#projects",
   },
   {
-    label: "Our Values",
+    label: "About",
+    href: "#intro",
+  },
+  {
+    label: "Testimonials",
     href: "#testimonials",
   },
   {
-    label: "Join Us",
+    label: "Contact",
     href: "#contact",
   },
 ];
@@ -30,47 +29,84 @@ const Header: FC = () => {
   const [openMobileMenu, setOpenMobileMenu ]= useState(false)
 
   return (
-    <header className="bg-blue-2 font-sfProDisplay">
-      <div className="container max-w-[20rem] md:max-w-[80%] lg:max-w-[80%]">
-        <div className="py-7"> 
-          <div className="flex justify-between items-center">
-            <div className="flex items-center justify-between gap-2 w-full">
-                <div className="w-[4rem]">
-                  <Image className="object-fill" src={dnaLogo} alt="dna logo"  />
-                </div>
+    <header className="absolute inset-x-0 top-0 z-30 font-sfProDisplay">
+      <div className="mx-auto max-w-[1510px] px-5 sm:px-8 lg:px-14">
+        <div className="flex h-[76px] items-center justify-between border-b border-white/10 bg-black/20 px-0 backdrop-blur-sm lg:h-[92px]">
+          <Link href="#" className="flex items-center gap-3 text-white">
+                <span className="flex h-12 w-12 items-center justify-center overflow-hidden rounded-[11px] bg-white shadow-lg shadow-black/10 md:h-14 md:w-14">
+                  <Image src={dnaLogo} alt="DNA Management logo" className="h-full w-full object-contain p-1" />
+                </span>
+                <span className="font-sfProDisplayBold text-2xl font-black tracking-[-0.01em] md:text-[28px]">
+                  DNA Management
+                </span>
+          </Link>
                 
-                <ul className="hidden md:flex items-center gap-4">
-                  {navItems.map(({label}) => (
-                    <Link className="text-[#25334D]" href="" key={label}>{label}</Link>
-                  ))}
-                </ul>
-            </div>
-                 
-            <div className="relative grid ems-center">
-              {/* <Link href="/donate"> */}
-                <Button variant="primary" className="mr-[10ch] hidden">
-                    Shedule Consultation
-                </Button>
-              {/* </Link> */}
-              <button className="fixed justify-self-end flex items-center justify-center text-black bg-gray-800 fill-black z-20 md:hidden"
-              onClick={() => setOpenMobileMenu(!openMobileMenu)}
-              >
-                <AnimatePresence
-                >
-                {
-                  openMobileMenu ? (          
-                    <motion.svg className="fill-black" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><g clipPath="url(#clip0_794_3025)"><path d="M15.8334 5.34175L14.6584 4.16675L10.0001 8.82508L5.34175 4.16675L4.16675 5.34175L8.82508 10.0001L4.16675 14.6584L5.34175 15.8334L10.0001 11.1751L14.6584 15.8334L15.8334 14.6584L11.1751 10.0001L15.8334 5.34175Z"></path></g><defs><clipPath id="clip0_794_3025"><rect width="20" height="20" fill="white"></rect></clipPath></defs>
-                    </motion.svg>
-                  ) : (
-                      <motion.svg className="fill-black" width="16" height="10" viewBox="0 0 16 10" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M0.5 10H15.5V8.33333H0.5V10ZM0.5 5.83333H15.5V4.16667H0.5V5.83333ZM0.5 0V1.66667H15.5V0H0.5Z"></path></motion.svg>
-                  )
-                }
-                </AnimatePresence>
-              </button>
-            </div>
-          </div>
+          <ul className="hidden items-center gap-10 md:flex lg:gap-14">
+            {navItems.map(({label, href}) => (
+              <li key={label}>
+                <Link className="text-lg font-semibold text-white/70 transition hover:text-white" href={href}>
+                  {label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+
+          <Link
+            href="#contact"
+            className="hidden min-w-[156px] rounded-full bg-[#bd7a35] px-8 py-4 text-center text-lg font-bold text-white transition hover:bg-[#a9672d] md:inline-flex md:justify-center lg:min-w-[180px]"
+          >
+            Get in Touch
+          </Link>
+
+          <button
+            className="relative z-40 flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white md:hidden"
+            aria-label="Toggle navigation"
+            onClick={() => setOpenMobileMenu(!openMobileMenu)}
+          >
+            <AnimatePresence mode="wait">
+              {
+                openMobileMenu ? (          
+                  <motion.svg key="close" width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><g clipPath="url(#clip0_794_3025)"><path d="M15.8334 5.34175L14.6584 4.16675L10.0001 8.82508L5.34175 4.16675L4.16675 5.34175L8.82508 10.0001L4.16675 14.6584L5.34175 15.8334L10.0001 11.1751L14.6584 15.8334L15.8334 14.6584L11.1751 10.0001L15.8334 5.34175Z"></path></g><defs><clipPath id="clip0_794_3025"><rect width="20" height="20" fill="white"></rect></clipPath></defs>
+                  </motion.svg>
+                ) : (
+                  <motion.svg key="menu" width="20" height="14" viewBox="0 0 20 14" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M0 14H20V11.8H0V14ZM0 8.1H20V5.9H0V8.1ZM0 0V2.2H20V0H0Z"></path></motion.svg>
+                )
+              }
+            </AnimatePresence>
+          </button>
         </div>
       </div>
+
+      <AnimatePresence>
+        {openMobileMenu && (
+          <motion.nav
+            initial={{ opacity: 0, y: -12 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -12 }}
+            className="mx-5 mt-3 rounded-[8px] border border-white/10 bg-[#171512]/95 p-4 shadow-2xl md:hidden"
+          >
+            <div className="flex flex-col gap-1">
+              {navItems.map(({ label, href }) => (
+                <Link
+                  key={label}
+                  href={href}
+                  className="rounded-[6px] px-3 py-3 text-base font-semibold text-white/80 transition hover:bg-white/10 hover:text-white"
+                  onClick={() => setOpenMobileMenu(false)}
+                >
+                  {label}
+                </Link>
+              ))}
+              <Link
+                href="#contact"
+                className="mt-2 rounded-full bg-[#bd7a35] px-5 py-3 text-center text-base font-bold text-white"
+                onClick={() => setOpenMobileMenu(false)}
+              >
+                Get in Touch
+              </Link>
+            </div>
+          </motion.nav>
+        )}
+      </AnimatePresence>
     </header>
 );
 };

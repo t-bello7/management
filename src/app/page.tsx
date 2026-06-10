@@ -4,6 +4,7 @@ import {
   Intro,
   Projects, 
   Testimonials,
+  CTA,
   Footer
 } from "@/sections";
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
     <Projects />
     <Intro />
     <Testimonials />
+    <CTA />
     <Footer />  
   </div>
 }

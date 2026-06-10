@@ -1,64 +1,134 @@
 import Image from "next/image";
+import Link from "next/link";
 import { FC } from "react";
-import {
-  checkmark,
-  colors,
-  bucket  
-} from "@/assets/icons"
+import { corporateTrainingHero } from "@/assets/images";
 
-const info = [
+const programs = [
   {
-    title: "Proven Excellence & Reliability",
-    icon: checkmark,
-    text: "We’ve built a reputation for consistent, high-quality service delivery. Our experienced team follows standardized protocols and uses the latest tools and eco-friendly products to ensure every task meets the highest standards—on time, every time."
+    number: "01",
+    category: "Leadership",
+    title: "Executive Leadership Development",
+    description:
+      "Equip your leaders with the strategic thinking, emotional intelligence, and decision-making frameworks needed to drive organizational success in today's complex business environment.",
+    points: [
+      "Strategic vision and goal alignment",
+      "Emotional intelligence and empathy",
+      "High-stakes decision making",
+      "Change management and resilience",
+    ],
   },
   {
-    title: "Comprehensive Solutions",
-    icon: colors,
-    text: "Whether it’s routine cleaning, technical maintenance, or specialized services like pest control or space management, we provide tailored solutions to meet your facility’s exact needs. Our integrated approach saves you time, money, and stress."
+    number: "02",
+    category: "Communication",
+    title: "Effective Communication & Influence",
+    description:
+      "Build teams that communicate with clarity, confidence, and impact. From boardroom presentations to cross-functional collaboration, we cover every dimension of professional communication.",
+    points: [
+      "Executive presence and public speaking",
+      "Negotiation and conflict resolution",
+      "Storytelling for business impact",
+      "Stakeholder management",
+    ],
+    reverse: true,
   },
   {
-    title: "Eco-Conscious Approach",
-    icon: bucket,
-    text: "Your people’s health and the environment matter to us. That’s why we prioritize green cleaning methods, sustainable waste practices, and strict safety compliance, creating safer, healthier environments for all."
-  }
-]
+    number: "03",
+    category: "Team Performance",
+    title: "High-Performance Team Building",
+    description:
+      "Transform groups into cohesive, high-performing teams. Our evidence-based programs address team dynamics, psychological safety, and the systems that enable sustained excellence.",
+    points: [
+      "Team dynamics and trust building",
+      "Psychological safety frameworks",
+      "Accountability and performance culture",
+      "Remote and hybrid team effectiveness",
+    ],
+  },
+];
 
 const Projects: FC = () => {
   return (
-    <section className="section space-y-8" id="projects">
-      <div className="container space-y-6 grid justify-items-center">
-        <h2 className="text-primary uppercase text-xs bg-[#E6F8FF] w-fit text-center py-1 px-4 rounded-full">
-          OUR SERVICES
-        </h2> 
-        <div className="space-y-3">
-          <h3 className="text-center text-2xl md:text-4xl font-sfProDisplayBold font-bold">
-             We Create Environments That Work
-          </h3>
-          <p className="text-[#71717A] md:text-center">
-         Partnering with DNA management means choosing a team dedicated to reliability, safety, and tailored facility solutions that support your operations and enhance your space.
+    <section id="projects" className="bg-[#f7f7f4] py-20 text-[#101010] md:py-28 lg:py-36">
+      <div className="mx-auto max-w-[1510px] px-5 sm:px-8 lg:px-14">
+        <div className="max-w-[560px]">
+          <p className="text-xs font-black uppercase tracking-[0.28em] text-black/38">
+            Our Programs
           </p>
+          <h2 className="mt-5 font-sfProDisplayBold text-[2.65rem] font-black leading-[1.02] tracking-normal md:text-6xl">
+            Training Programs That
+            <span className="block text-[#a96a31]">Drive Results</span>
+          </h2>
         </div>
-      </div>
-   
-         <div
-      className="container max-w-[88%] flex flex-col gap-4 md:flex md:flex-row md:max-w-full lg:gap-5 justify-center">
-          {
-            info.map(({icon, text, title}) => (
-              <div key={title} className="rounded-xl bg-white md:w-[30ch] h-[36vh] py-6 px-4 grid items-start border gap-3">
-                <Image src={icon} alt={title} />
-                <div className="space-y-2"> 
-                  <span className="text-bold text-[#18181B]"> {title} </span>
-                  <p className="text-[#71717A]">
-                    {text}
-                  </p>
+
+        <div className="mt-16 h-px w-full bg-black/10 md:mt-24" />
+
+        <div className="divide-y divide-black/10">
+          {programs.map((program) => (
+            <article
+              key={program.number}
+              className="grid gap-10 py-16 md:py-24 lg:grid-cols-2 lg:items-center lg:gap-20 xl:gap-28"
+            >
+              <div className={program.reverse ? "lg:order-2" : ""}>
+                <div className="relative aspect-[1.42] overflow-hidden rounded-[28px] md:rounded-[34px] lg:aspect-[1.38]">
+                  <Image
+                    src={corporateTrainingHero}
+                    alt={`${program.title} training session`}
+                    fill
+                    sizes="(min-width: 1200px) 680px, 100vw"
+                    className="object-cover object-center"
+                  />
                 </div>
               </div>
-            ))
-          }
+
+              <div
+                className={`relative ${
+                  program.reverse
+                    ? "lg:order-1 lg:pr-10 xl:pr-20"
+                    : "lg:pl-4 xl:pl-12"
+                }`}
+              >
+                <span
+                  aria-hidden="true"
+                  className={`pointer-events-none absolute -top-7 right-0 font-sfProDisplayBold text-[5.5rem] font-black leading-none text-[#e6ece5] md:text-[7rem] ${
+                    program.reverse ? "lg:right-24 xl:right-36" : ""
+                  }`}
+                >
+                  {program.number}
+                </span>
+
+                <div className="relative z-10 max-w-[520px]">
+                  <p className="text-xs font-black uppercase tracking-[0.28em] text-black/38">
+                    {program.category}
+                  </p>
+                  <h3 className="mt-7 border-l-[3px] border-[#bd7a35] pl-5 font-sfProDisplayBold text-[2rem] font-black leading-[1.08] tracking-normal md:text-[2.6rem]">
+                    {program.title}
+                  </h3>
+                  <p className="mt-8 text-base font-semibold leading-8 text-black/68 md:text-lg md:leading-9">
+                    {program.description}
+                  </p>
+                  <ul className="mt-7 space-y-3 text-sm font-semibold leading-6 text-black/62 md:text-base">
+                    {program.points.map((point) => (
+                      <li key={point} className="flex gap-4">
+                        <span className="mt-[0.55rem] h-1.5 w-1.5 shrink-0 rounded-full bg-[#bd7a35]" />
+                        <span>{point}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <Link
+                    href="#contact"
+                    className="mt-9 inline-flex items-center gap-3 border-b border-black/20 pb-1 text-base font-black text-[#111111] transition hover:border-[#bd7a35] hover:text-[#a96a31]"
+                  >
+                    Learn More
+                    <span aria-hidden="true">-&gt;</span>
+                  </Link>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
       </div>
     </section>
-  )
+  );
 };
 
 export default Projects;
