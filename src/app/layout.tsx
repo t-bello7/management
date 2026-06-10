@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "OxygenForLife Ghana | Affordable Medical Oxygen in Ghana | Oxygen For Life NGO Saving Lives",
-  description: "Oxygen For Life Ghana is a non-profit providing affordable medical oxygen to hospitals and communities across Ghana. We improve health outcomes by ensuring reliable oxygen access, training healthcare workers, and advocating for better healthcare infrastructure. Support our mission to save lives today",
+  title: "DNA Management | Corporate Training & Development",
+  description: "DNA Management delivers corporate training and development programs that help organizations build stronger leaders, improve communication, and create high-performing teams.",
 };
 
 export default function RootLayout({
@@ -17,4 +17,3 @@ export default function RootLayout({
     </html>
   );
 }
-
